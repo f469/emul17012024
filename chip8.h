@@ -9,32 +9,32 @@
  */
 
 // 35 opcodes each two bytes long
-unsigned short opcode;
+extern unsigned short opcode;
 
 // 4K memory in total
-unsigned char memory[4096];
+extern unsigned char memory[4096];
 
 //16 8-bit registers (V0,V1 up to VE). 16th register used for the carry flag
-unsigned char V[16];
+extern unsigned char V[16];
 
 // Index register, value from 0x000 to 0xFFF
-unsigned short I;
+extern unsigned short I;
 
 // Program counter, value from 0x000 to 0xFFF
-unsigned short pc;
+extern unsigned short pc;
 
 // Screen : 2048 pixels (64 x 32), black and white (1 or 0)
-unsigned char gfx[64 * 32];
+extern unsigned char gfx[64 * 32];
 
-unsigned char delay_timer;
-unsigned char sound_timer;
+extern unsigned char delay_timer;
+extern unsigned char sound_timer;
 
 // Stack
-unsigned short stack[16];
-unsigned short sp;
+extern unsigned short stack[16];
+extern unsigned short sp;
 
 // HEX based keypad (0x0-0xF)
-unsigned char key[16];
+extern unsigned char key[16];
 
 // Initialize registers and memory once
 void initialize();
