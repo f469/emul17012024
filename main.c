@@ -3,9 +3,12 @@
 int main() {
 	initialize();
 
-	// TODO : load the ROM here (path given as argument) into memory starting at 0x200.
-	// Plan: a load_rom(path) function in chip8.c reading the file straight into memory
-	// (no intermediate buffer), with errors for a missing file or a ROM that is too big.
+	// TODO : load the program into the memory, after initialization:
+	//  - open the ROM with fopen in binary mode ("rb") and read it into a buffer (bufferSize bytes)
+	//  - fill the memory starting at 0x200 (== 512):
+	//      for(int i = 0; i < bufferSize; ++i)
+	//        memory[i + 512] = buffer[i];
+	//  - to improve later: check that bufferSize fits (4096 - 512) before copying
 
 	for(;;) {
 		emulateCycle();
