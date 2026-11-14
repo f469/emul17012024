@@ -3,11 +3,9 @@
 int main() {
 	initialize();
 
-	for(int i = 0; i < bufferSize; ++i)
-  	memory[i + 512] = buffer[i];
-
 	for(;;) {
 		emulateCycle();
+		break; // TODO : remove once ROM loading and a stop condition exist
 	}
 	return 0;
 }
