@@ -36,4 +36,10 @@ unsigned short sp;
 // HEX based keypad (0x0-0xF)
 unsigned char key[16];
 
+// Initialize registers and memory once
+void initialize();
+
+// Fetch, Decode, Execute, Update timers
+void emulateCycle();
+
 #endif // CHIP8_H
